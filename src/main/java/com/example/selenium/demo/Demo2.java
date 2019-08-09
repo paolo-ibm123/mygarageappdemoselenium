@@ -18,13 +18,15 @@ public class Demo2 {
 	}
 	
 	public static void main(String[] args) {
-		String site = "file:///C:/tools/test.html";
+		//String site = "file:///C:/tools/test.html";
 		
-		System.setProperty("webdriver.ie.driver", "C:\\ProgramData\\Drivers\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "C:\\Users\\JuanPaoloAndrada\\Documents\\My Received Files\\IEDriverServer_x64_3.14.0\\IEDriverServer_x64_3.14.0\\IEDriverServer.exe");
 		driver = new InternetExplorerDriver();
 		wait = new WebDriverWait(driver, 20);
 		
-		driver.get(site);
+		//driver.get(site);
+			driver.navigate().to("http://localhost:8085/mygarageappdemo/");
+			driver.manage().window().maximize();
 		
 		try {
 			WebElement element = driver.findElement(By.id("date"));

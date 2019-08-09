@@ -19,15 +19,17 @@ public class Demo1 {
 	}
 	
 	public static void main(String[] args) {
-		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-		File file = new File(classLoader.getResource("test.html").getFile());
-		String site = file.getAbsolutePath();
+		//ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		//File file = new File(classLoader.getResource("test.html").getFile());
+		//String site = file.getAbsolutePath();
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\JuanPaoloAndrada\\Desktop\\chromedriver.exe");
 		driver = new ChromeDriver();
 		wait = new WebDriverWait(driver, 20);
 		
-		driver.get(site);
+		//driver.get(site);
+				driver.navigate().to("localhost:8085/mygarageappdemo/");
+				driver.manage().window().maximize();
 		
 		try {
 			WebElement element = driver.findElement(By.id("date"));
